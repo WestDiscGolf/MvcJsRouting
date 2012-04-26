@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@section AdditionalJsImports
+{
+    @Html.Action("Urls")    
+    <script src="@Url.Content("~/Js/Home.Index.js")" type="text/javascript"></script>
+}
+
+@section JsInit
+{
+    Home.Index.Init({selector: "#value"});
+}
+
+@section JsBind
+{
+    <script type="text/javascript">
+
+        $("#home").bind("click", Home.Index.Home);
+        $("#about").bind("click", Home.Index.About);
+        $("#contact").bind("click", Home.Index.Contact);
+
+    </script>
+}
+
+<h2>MVC Js Routing</h2>
+
+<p>A view creates controller based uris which relate to the controller actions.</p>
+
+<div>
+    <button id="home">Home</button>
+    <button id="about">About</button>
+    <button id="contact">Contact</button>
+</div>
+
+<div>
+    <span id="value"></span>
+</div>
