@@ -1,26 +1,27 @@
 ﻿/// <reference path="_references.js" />
 
-var index = function () {
+var Home = Home || {};
+Home.Index = function () {
 
-    var selector;
+    var selector,
 
-    this.Init = function (options) {
+    init = function (options) {
         selector = options.selector;
-    };
+    },
 
-    this.Home = function () {
+    home = function () {
         execute(Urls.Home.Home);
-    };
+    },
 
-    this.About = function () {
+    about = function () {
         execute(Urls.Home.About);
-    };
+    },
 
-    this.Contact = function () {
+    contact = function () {
         execute(Urls.Home.Contact);
-    };
+    },
 
-    var execute = function (url) {
+    execute = function (url) {
 
         $.ajax({
             type: "get",
@@ -30,7 +31,12 @@ var index = function () {
             }
         });
     };
-};
 
-var Home = Home || {};
-Home.Index = new index;
+    return {
+        init: init,
+        home: home,
+        about: about,
+        contact: contact
+    }
+
+} ();

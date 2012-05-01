@@ -10,16 +10,16 @@
 
 @section JsInit
 {
-    Home.Index.Init({selector: "#value"});
+    Home.Index.init({selector: "#value"});
 }
 
 @section JsBind
 {
     <script type="text/javascript">
 
-        $("#home").bind("click", Home.Index.Home);
-        $("#about").bind("click", Home.Index.About);
-        $("#contact").bind("click", Home.Index.Contact);
+        $("#home").bind("click", Home.Index.home);
+        $("#about").bind("click", Home.Index.about);
+        $("#contact").bind("click", Home.Index.contact);
 
     </script>
 }
