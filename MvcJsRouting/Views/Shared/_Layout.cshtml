@@ -11,19 +11,5 @@
     @RenderBody()
 
     @RenderSection("AdditionalJsImports", required: false)
-
-    @if (IsSectionDefined("JsInit"))
-    {
-      <script type="text/javascript">
-        $(document).ready(function() {
-            @RenderSection("JsInit", required: false)
-        });
-      </script>
-    }
-    
-    @if (IsSectionDefined("JsBind"))
-    {
-        @RenderSection("JsBind")
-    }
 </body>
 </html>

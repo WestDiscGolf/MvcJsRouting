@@ -3,22 +3,23 @@
 var Home = Home || {};
 Home.Index = function () {
 
-    var selector,
+    var selector, urls,
 
     init = function (options) {
         selector = options.selector;
+        urls = options.urls;
     },
 
     home = function () {
-        execute(Urls.Home.Home);
+        execute(urls.home);
     },
 
     about = function () {
-        execute(Urls.Home.About);
+        execute(urls.about);
     },
 
     contact = function () {
-        execute(Urls.Home.Contact);
+        execute(urls.contact);
     },
 
     execute = function (url) {
